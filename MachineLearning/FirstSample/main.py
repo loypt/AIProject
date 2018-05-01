@@ -20,10 +20,12 @@ plt.show()
 
 
 x0 = np.linspace(-2, 4 ,100)
+
+
 def get_model(deg):
     return lambda input_x=x0 : np.polyval(np.polyfit(x, y, deg), input_x)
-#polyfit(x, y, deg) 返回L(p;n)
-#polyval(p, x):根据多项式的各项系数p和多项式中x的值，返回多项式的值y
+# polyfit(x, y, deg) 返回L(p;n)
+# polyval(p, x):根据多项式的各项系数p和多项式中x的值，返回多项式的值y
 
 #根据参数n、输入的x、y返回相对应的损失
 def get_cost(deg, input_x, input_y):
