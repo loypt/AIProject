@@ -22,6 +22,6 @@ train_dataset = train_dataset.shuffle(buffer_size=1000)     # 打乱数据排列
 train_dataset = train_dataset.batch(32)     # 每32行数据为一次训练
 
 # 查看一个示例数据
-features, label = tfe.Iterator(train_dataset).next()
+features, label = tf.data.Dataset.make_one_shot_iterator(train_dataset).next()
 print("示例特征 ：", features[0])
 print("示例标签 ：", label[0])
